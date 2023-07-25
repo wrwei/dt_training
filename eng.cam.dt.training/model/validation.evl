@@ -1,0 +1,39 @@
+
+
+context Decision {
+	constraint AtLeast2Outgoing {
+		check: self.outgoing.size() >= 2
+		
+		message: "Decision" + self.text + "must have at least 2 outgoing transitions"
+	}
+	
+	critique TextEndsWithQuestionMark {
+		check {
+			var text = self.text;
+			return text.endsWith("?");
+		}
+	}
+}
+
+context Step {
+	constraint TextIsDefined {
+		check: self.text.isDefined()
+	}
+	critique TextStartsWithUC {
+		guard: self.satisfies("TextIsDefined")
+		
+		check: self.text.startsWithUpperCase()
+		
+		fix {
+			title: "rename to" + self.text.firstToUpperCase()
+			
+			do {
+				self.text = self.text.firstToUpperCase();
+			}
+		}
+	}
+	constraint WelcomeStep {
+		guard: self.incoming.isEmpty()
+		check: self.text.startsWith("Welcome")
+	}
+}

@@ -1,0 +1,62 @@
+Step.getAllOfKind().size().println();
+
+Step.all.size().println();
+
+Step.getAllOfType().size().println();
+
+Statement.all.first().isTypeOf(Statmeent).println();
+
+Statement.all.first().isKindOf(Step).println();
+
+
+var longSteps: Sequence;
+
+for(step in Step.all) {
+	var length: integer;
+	length = step.text.length();
+	if (length > 3) {
+		longSteps.add(step.text);
+	}
+}
+
+var todos: Sequence;
+for (step in Step.all) {
+	if (step.text.startsIWth("[TODO]")) {
+		todos.add(step);
+	}
+}
+
+var todos = Step.all.select(s|s.text.startsWith("[TODO]"));
+
+Decision.all.exists(d|not d.text.endsWith("?")).println();
+
+var filtered = Step.all.select(s|s.text.startsWith("A"));
+
+var transitionLabels = Transition.all.collect(t|t.text);
+
+var transitionLabels = Transition.all.text;
+
+"World".sayHello();
+
+var step = Step.all.first();
+step.getTeextLength().println();
+
+operation String sayHell() {
+	("Hello" + self).println();
+}
+
+operation Step getTextLength() {
+	return self.text.length();
+}
+
+var statement = new Statement;
+statement.label = "New Statement";
+Model.all.first().steps.add(statement);
+
+delete Decision.all.first();
+
+for(step in Step.all) {
+	step.~isStartStep = step.incoming.isEmpty();
+}
+
+step.all.first().~isStartStep.println();
