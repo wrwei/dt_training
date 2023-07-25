@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="callcentre" xmi:id="_sBX6gCq9Ee6HpfOeyndGGQ">
+  <steps xsi:type="Statement" xmi:id="_dtGuMCq-Ee6HpfOeyndGGQ" text="Wecome to Acme Bank" outgoing="_tWv8kCq-Ee6HpfOeyndGGQ"/>
+  <steps xsi:type="Decision" xmi:id="_kaCDwCq_Ee6HpfOeyndGGQ" text="Are you an existing customer?" outgoing="_w-CMUCq-Ee6HpfOeyndGGQ _7S1ngCq_Ee6HpfOeyndGGQ" incoming="_tWv8kCq-Ee6HpfOeyndGGQ"/>
+  <steps xsi:type="InputQuestion" xmi:id="_my-4ICq_Ee6HpfOeyndGGQ" text="Please enter your account number" outgoing="_y_7LkCq-Ee6HpfOeyndGGQ" incoming="_w-CMUCq-Ee6HpfOeyndGGQ" variable="ac"/>
+  <steps xsi:type="InputQuestion" xmi:id="_ynvfoCq_Ee6HpfOeyndGGQ" text="Please enter your e-banking PIN" outgoing="_9ifV8Cq_Ee6HpfOeyndGGQ" incoming="_y_7LkCq-Ee6HpfOeyndGGQ" variable="pin"/>
+  <steps xsi:type="Statement" xmi:id="_5G4GQCq_Ee6HpfOeyndGGQ" text="Please be aware that the call may be recorded for training and quality purposes" outgoing="_B_oPoCrAEe6HpfOeyndGGQ" incoming="_7S1ngCq_Ee6HpfOeyndGGQ _9ifV8Cq_Ee6HpfOeyndGGQ"/>
+  <steps xsi:type="Decision" xmi:id="_AEPhACrAEe6HpfOeyndGGQ" text="Please select one of the following options" outgoing="_KbS0YCrAEe6HpfOeyndGGQ _M3aRgCrAEe6HpfOeyndGGQ" incoming="_B_oPoCrAEe6HpfOeyndGGQ"/>
+  <steps xsi:type="CallRedirection" xmi:id="_ER2w8CrAEe6HpfOeyndGGQ" text="Redirect to 01904 100000" incoming="_M3aRgCrAEe6HpfOeyndGGQ" number="01904 100000"/>
+  <steps xsi:type="CallRedirection" xmi:id="_H8wVYCrAEe6HpfOeyndGGQ" text="Redirect to 01904 100001" incoming="_KbS0YCrAEe6HpfOeyndGGQ" number="01904 100001"/>
+  <transitions xmi:id="_tWv8kCq-Ee6HpfOeyndGGQ" from="_dtGuMCq-Ee6HpfOeyndGGQ" to="_kaCDwCq_Ee6HpfOeyndGGQ"/>
+  <transitions xmi:id="_w-CMUCq-Ee6HpfOeyndGGQ" text="yes" from="_kaCDwCq_Ee6HpfOeyndGGQ" to="_my-4ICq_Ee6HpfOeyndGGQ"/>
+  <transitions xmi:id="_y_7LkCq-Ee6HpfOeyndGGQ" text="" from="_my-4ICq_Ee6HpfOeyndGGQ" to="_ynvfoCq_Ee6HpfOeyndGGQ"/>
+  <transitions xmi:id="_7S1ngCq_Ee6HpfOeyndGGQ" from="_kaCDwCq_Ee6HpfOeyndGGQ" to="_5G4GQCq_Ee6HpfOeyndGGQ"/>
+  <transitions xmi:id="_9ifV8Cq_Ee6HpfOeyndGGQ" from="_ynvfoCq_Ee6HpfOeyndGGQ" to="_5G4GQCq_Ee6HpfOeyndGGQ"/>
+  <transitions xmi:id="_B_oPoCrAEe6HpfOeyndGGQ" from="_5G4GQCq_Ee6HpfOeyndGGQ" to="_AEPhACrAEe6HpfOeyndGGQ"/>
+  <transitions xmi:id="_KbS0YCrAEe6HpfOeyndGGQ" text="mortages" from="_AEPhACrAEe6HpfOeyndGGQ" to="_H8wVYCrAEe6HpfOeyndGGQ"/>
+  <transitions xmi:id="_M3aRgCrAEe6HpfOeyndGGQ" text="savings accounts" from="_AEPhACrAEe6HpfOeyndGGQ" to="_ER2w8CrAEe6HpfOeyndGGQ"/>
+</Model>

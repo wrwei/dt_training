@@ -11,7 +11,7 @@
       <package
             uri="callcentre"
             class="callcentre.CallcentrePackage"
-            genModel="model/callcentre.genmodel"/>
+            genModel="metamodel/callcentre.genmodel"/>
    </extension>
 
 </plugin>
