@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/eng.cam.dt.training/src" modelPluginID="eng.cam.dt.training"
+    modelName="Callcentre" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>callcentre.ecore</foreignModel>
+  <genPackages prefix="Callcentre" disposableProviderFactory="true" ecorePackage="callcentre.ecore#/">
+    <genClasses ecoreClass="callcentre.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute callcentre.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference callcentre.ecore#//Model/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference callcentre.ecore#//Model/transitions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="callcentre.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute callcentre.ecore#//Step/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference callcentre.ecore#//Step/outgoing"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference callcentre.ecore#//Step/incoming"/>
+    </genClasses>
+    <genClasses ecoreClass="callcentre.ecore#//Statement"/>
+    <genClasses ecoreClass="callcentre.ecore#//Decision"/>
+    <genClasses ecoreClass="callcentre.ecore#//CallRedirection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute callcentre.ecore#//CallRedirection/number"/>
+    </genClasses>
+    <genClasses ecoreClass="callcentre.ecore#//InputQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute callcentre.ecore#//InputQuestion/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="callcentre.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute callcentre.ecore#//Transition/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference callcentre.ecore#//Transition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference callcentre.ecore#//Transition/to"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
